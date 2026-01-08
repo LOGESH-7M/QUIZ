@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Assessment | Frontend Fundamentals</title>
+    <!-- Premium Fonts: Inter for UI, Merriweather or varied weight Inter for headers. Using Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-content">
+            <h1 class="logo">Club Assessment</h1>
+            <p class="subtitle">Frontend Fundamentals Evaluation</p>
+        </div>
+        <div class="header-stats">
+            <div class="stat-badge">
+                <span class="stat-label">Best Score</span>
+                <span class="stat-value" id="header-best-score">-- / 10</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="quiz-container">
+        <!-- Questions will be injected here by JS -->
+        <div id="quiz-list" class="quiz-list"></div>
+    </main>
+
+    <footer class="app-footer">
+        <div class="progress-bar-container">
+            <div class="progress-text">Answered <span id="progress-count">0</span> / 10</div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+        <button id="submit-btn" class="submit-btn" disabled>Submit Assessment</button>
+    </footer>
+
+    <!-- Result Modal -->
+    <div class="modal-overlay hidden" id="result-modal">
+        <div class="modal-card">
+            <h2 class="modal-title">Assessment Complete</h2>
+            
+            <div class="score-overview">
+                <div class="total-score">
+                    <span class="score-large" id="modal-total-score">0</span>
+                    <span class="score-denominator">/ 10</span>
+                </div>
+            </div>
+
+            <div class="score-breakdown">
+                <div class="topic-score">
+                    <span class="topic-label html-label">HTML</span>
+                    <span class="topic-value" id="score-html">-</span>
+                </div>
+                <div class="topic-score">
+                    <span class="topic-label css-label">CSS</span>
+                    <span class="topic-value" id="score-css">-</span>
+                </div>
+                <div class="topic-score">
+                    <span class="topic-label js-label">JavaScript</span>
+                    <span class="topic-value" id="score-js">-</span>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button id="retry-btn" class="secondary-btn">Retry Assessment</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
